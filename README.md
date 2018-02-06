@@ -1,6 +1,7 @@
 
+# N-glycan signatures identified in tumor interstitial fluid and serum of breast cancer patients
 
-Date: 06-02-2018\\
+Date: 06-02-2018
 Author of R-scrips: Thilde Bagger Terkelsen, PhD student CBL, DCRC
 Email: thilde@cancer.dk 
 
