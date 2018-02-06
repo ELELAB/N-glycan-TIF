@@ -11,7 +11,7 @@ This repository contains N-glycan abundance data from tumour/normal interstitial
 The repository cotains two folders:
                                     
           (1) N-glycan abundance data and patient metadata. 
-          (2) R-scripts:
+          (2) Rscripts:
                            (a) N_Glycan_Functions.R
                            (b) N_Glycan_Analysis_All.R
                            (c) N_Glycan_Analysis_Paired.R
