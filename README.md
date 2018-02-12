@@ -1,14 +1,16 @@
-
-# N-glycan signatures identified in tumor interstitial fluid and serum of breast cancer patients
-
 Date: 06-02-2018
-Author of R-scrips: Thilde Bagger Terkelsen, PhD student CBL, DCRC
-Email: thilde@cancer.dk 
+Computational Biology Laboratory, Danish Cancer Society Research Center, Strandboulevarden 49, 2100, Copenhagen, Denmark
+
+Repository associated to the publication:
+
+N-glycan signatures identified in tumor interstitial fluid and serum of breast cancer patients - association with tumor biology and clinical outcome
+Thilde Terkelsen, Vilde D Haakensen, Radka Saldova, Pavel Gromov, Merete Kjær Hansen, Henning Stöckmann, Ole Christian Lingjærde, Anne-Lise Børresen-Dale, Elena Papaleo, Åslaug Helland, Pauline M. Rudd, Irina Gromova
+submitted.
 
 
-This repository contains N-glycan abundance data from tumour/normal interstitial fluids and serum obtained from a cohort of patients with breast cancer. The repository was made with intent of openly sharing both data and R-scripts used in analysis in relation to the publication "N-glycan signatures identified in tumor interstitial fluid and serum of breast cancer patients".
+This repository contains N-glycan abundance data from tumour/normal interstitial fluids and serum obtained from a cohort of patients with breast cancer. The repository was made with intent of openly sharing both data and R-scripts used in analysis in relation to the publication.
 
-The repository cotains two folders:
+The repository contains two folders:
                                     
           (1) N-glycan abundance data and patient metadata. 
           (2) Rscripts:
