@@ -22,8 +22,8 @@ Date 29-05-2017
 # LOAD PACKAGES
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#source("https://bioconductor.org/biocLite.R")
-#biocLite("survcomp")
+source("https://bioconductor.org/biocLite.R")
+biocLite("survcomp")
 list.of.packages <- c("limma", "sva", "openxlsx", "ggplot2", "dendextend", "heatmap.plus", "reshape", "gdata", "plyr", "data.table", "RColorBrewer", "squash", "survcomp", "car", "survminer", "survminer")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
