@@ -24,4 +24,6 @@ Aditionally the folder with R-scrips contains a sub-folder with dataframes genea
 
 NOTES:
 
-We suggest to use Rstudio to run the scripts of interest. It is vital that the script N_Glycan_Functions.R is always run as the initital script as this scripts contains packages and costum functions needed for running the rest of the code.
+a) We suggest to use Rstudio to run the scripts of interest. 
+b) The scripts need to be run in the same folder where the N-glycan data and patient metadata are stored. Otherwise, the user would need to modify them with the right path.
+b) It is vital that the script N_Glycan_Functions.R is always run as the initital script as this scripts contains packages and costum functions needed for running the rest of the code.
