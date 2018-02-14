@@ -1,4 +1,3 @@
-Date: 06-02-2018
 Computational Biology Laboratory, Danish Cancer Society Research Center, Strandboulevarden 49, 2100, Copenhagen, Denmark
 
 Repository associated to the publication:
@@ -21,6 +20,8 @@ The repository contains two folders:
                            (e) N_Glycan_Serum_Analysis.R
                            (f) N_Glycan_Figures.R
                                     
-Aditionally the folder with R-scrips contins a sub-folder with dataframes geneated by scripts a-e, which may be used for easy plotting using script f, or to check results.
+Aditionally the folder with R-scrips contains a sub-folder with dataframes geneated by scripts a-e, which may be used for easy plotting using script f, or to check results.
 
-It is vital that the script N_Glycan_Functions.R is always run as the initital script as this scripts contains packages and costum functions needed for running the rest of the code.
+NOTES:
+
+We suggest to use Rstudio to run the scripts of interest. It is vital that the script N_Glycan_Functions.R is always run as the initital script as this scripts contains packages and costum functions needed for running the rest of the code.
