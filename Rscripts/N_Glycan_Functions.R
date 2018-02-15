@@ -114,7 +114,7 @@ DA_glycan <- function(my.contrast, my.data, my.design, coLFC, coFDR, my.block=NU
     corfit <- duplicateCorrelation(my.data, my.design, block=my.block) 
     fit3 <- eBayes(contrasts.fit(lmFit(my.data, my.design, block = my.block, correlation=corfit$consensus), my.contrast))
   }
-  tt <- toptable(fit3, coef=1, adjust='fdr', number=nrow(my.data))
+  tt <- topTable(fit3, coef=1, adjust='fdr', number=nrow(my.data))
   
   up <- tt[tt$logFC >= coLFC & tt$adj.P.Val < coFDR, ]
   down <- tt[tt$logFC <= -coLFC & tt$adj.P.Val < coFDR, ]
