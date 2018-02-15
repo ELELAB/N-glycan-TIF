@@ -7,6 +7,15 @@ Date 29-05-2017
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+list.of.packages <- c("getopt","limma", "sva", "openxlsx", "xlsx", "ggplot2", "heatmap.plus", "plyr", "data.table", "RColorBrewer", "squash", "survcomp", "survminer", "scales", "rms", "ny")
+
+missing.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+
+{
+if(length(missing.packages) > 0) {print(paste0(missing.packages, " package(s) are missing, install it/these with require(name.of.package) or install.packages(name.of.package)"))}
+stopifnot(length(missing.packages)==0)
+print("done")
+}
 
 
 
@@ -30,6 +39,13 @@ if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, library, character.only=T)
 
 
+missing.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+
+
+{
+if(length(missing.packages) > 0) {print(paste0(missing.packages, " package(s) are missing, install it/these with require(name.of.package) or install.packages(name.of.package)"))}
+stopifnot(length(missing.packages)==0)
+}
 
 
 
