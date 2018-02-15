@@ -122,26 +122,6 @@ myMDSplot(batch_corr_TS, TS, TS, TS.cols)
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# BATCH_CORRECTION SUBTYPES ONLY with >= 75 % tumor tissue
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## vector with BC subtypes and batch, TP > 75%, no normal samples 
-#TS_NN <- as.factor(as.character(TS[1:Tn]))
-#batch_NN <- as.factor(as.character(batch[1:Tn]))
-
-## design matrix
-#mod_design <-  model.matrix(~TS_NN)
-## batch correction with ComBat
-#batch_corr_TS_NN <- ComBat(TIFNIF[,1:Tn], batch_NN, mod_design, par.prior=TRUE,prior.plots=FALSE)
-
-## Multidimensional scaling plot before and after batch correction, colored by BC subtype
-#myMDSplot(TIFNIF[,1:Tn], TS_NN, TS_NN, TS.cols[-6])
-#myMDSplot(batch_corr_TS_NN, TS_NN, TS_NN, TS.cols[-6])
-
-
-
-
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
