@@ -22,8 +22,33 @@ The repository contains two folders:
                                     
 Aditionally the folder with R-scrips contains a sub-folder with dataframes geneated by scripts a-e, which may be used for easy plotting using script f, or to check results.
 
-NOTES:
+Requirements:
+R version 3.3.1 or high
+Rstudio version 1.1.383 or higher
 
+Although R-packages should automatically be installed and errors raised if they cannot be, we here provide the user with the list of required packages:
+
+CRAN:
+limma
+sva
+openxlsx
+ggplot2
+dendextend
+heatmap.plus
+reshape
+gdata
+plyr
+data.table
+RColorBrewer
+squash
+survminer
+car
+
+Bioconductor:
+survcomp
+
+
+Notes:
 a) We suggest to use Rstudio to run the scripts of interest. 
 b) The scripts need to be run in the same folder where the N-glycan data and patient metadata are stored. Otherwise, the user would need to modify them with the right path.
-b) It is vital that the script N_Glycan_Functions.R is always run as the initital script as this scripts contains packages and costum functions needed for running the rest of the code.
+b) N:B it is vital that the script N_Glycan_Functions.R is always run as the initital script as this scripts contains packages and costum functions needed for running the rest of the code.
