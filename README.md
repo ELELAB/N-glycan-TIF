@@ -32,8 +32,6 @@ Although R-packages should automatically be installed and errors raised if they 
 
 CRAN:
 
-    limma
-    sva
     openxlsx
     ggplot2
     dendextend
@@ -49,8 +47,9 @@ CRAN:
     
 Bioconductor:
 
-    survcomp
-                   
+    limma
+    sva
+    survcomp               
 
 Notes:
 
