@@ -76,6 +76,9 @@ NC <- as.factor(TIFNIFinfo$NC)
 # BC subtypes
 TS <- as.factor(TIFNIFinfo$Tumor_subtype_corrected_2015_11_20)
 
+# BC no Normal
+TS_NN <- as.factor(as.character(TS[1:Tn]))
+
 # Samples batch
 batch <- as.factor(TIFNIFinfo$plate)
 
