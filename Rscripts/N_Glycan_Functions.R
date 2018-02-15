@@ -33,7 +33,7 @@ missing.packages <- list.of.packages[!(list.of.packages %in% installed.packages(
 {
 if(length(missing.packages) > 0) {print(paste0(missing.packages, " package(s) are missing, install it/these with require(name.of.package) or install.packages(name.of.package). You may need to install one or more packages from bioconductor."))}
 stopifnot(length(missing.packages)==0)
-}
+
 
 
 
@@ -359,4 +359,5 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
   }
 }
 
-
+	   
+}
