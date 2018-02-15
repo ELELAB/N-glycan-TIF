@@ -44,6 +44,7 @@ CRAN:
     squash
     survminer
     car
+    scales
     
 Bioconductor:
 
