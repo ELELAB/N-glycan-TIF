@@ -66,20 +66,23 @@ TIFNIF <- log2(TIFNIF)
 # GET VECTORS WITH SUBTYPE, CONDITION, BATCH, PATIENT ID AND NUMBER OF TUMOR SAMPLES
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# number of tumor samples
+Tn <- length(grep("cancer", TIFNIFinfo$NC))
+
 # Condition tumor and normal
 NC <- as.factor(as.character(TIFNIFinfo$NC))
 
 # BC Subtypes
 TS <- factor(as.character(TIFNIFinfo$Tumor_subtype_corrected_2015_11_20), levels=c("normal", "LumA", "LumB", "LumB_HER2_enriched", "HER2", "TNBC"))
 
+# BC no Normal
+TS_NN <- as.factor(as.character(TS[1:Tn]))
+
 # Patient ID
 patient <- as.factor(as.character(TIFNIFinfo$patient))
 
 # Sample batch
 batch <- as.factor(TIFNIFinfo$plate)
-
-# number of tumor samples
-Tn <- length(grep("cancer", TIFNIFinfo$NC))
 
 
 # Color vectors for plotting Tumor subtypes (TS.cols) and normal+cancer (NC.cols)
@@ -123,23 +126,6 @@ myMDSplot(batch_corr_TS, TS, "", TS.cols)
 # Figure1Adata <- list(batch_corr_TS, TS, TS.cols)
 # save(Figure1Adata, file= "Figure1Adata.Rdata")
 
-
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# BATCH_CORRECTION SUBTYPES ONLY with >= 75 % tumor tissue
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## vector with BC subtypes and batch, TP > 75 %, no normal samples 
-#TS_NN <- as.factor(as.character(TS[1:Tn]))
-##batch_NN <- as.factor(as.character(batch[1:Tn]))
-
-## design matrix
-#mod_design <-  model.matrix(~TS_NN)
-## batch correction with ComBat
-#batch_corr_TS_NN <- ComBat(TIFNIF[,1:Tn], batch_NN, mod_design, par.prior=TRUE,prior.plots=FALSE)
-
-## Multidimensional scaling plot before and after batch correction, colored by BC subtype
-#myMDSplot(TIFNIF[,1:Tn], TS_NN, TS_NN, TS.cols[-6])
-#myMDSplot(batch_corr_TS_NN, TS_NN, TS_NN, TS.cols[-6])
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
