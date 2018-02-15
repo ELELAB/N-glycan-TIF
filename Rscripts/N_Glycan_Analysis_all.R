@@ -70,6 +70,9 @@ TIFNIF <- log2(TIFNIF)
 # GET VECTORS WITH SUBTYPE, CONDITION, BATCH AND NUMBER OF TUMOR SAMPLES
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Number of Tumor samples
+Tn <- length(grep("cancer", TIFNIFinfo$NC))
+
 # Condition tumor and normal
 NC <- as.factor(TIFNIFinfo$NC)
 
@@ -81,9 +84,6 @@ TS_NN <- as.factor(as.character(TS[1:Tn]))
 
 # Samples batch
 batch <- as.factor(TIFNIFinfo$plate)
-
-# Number of Tumor samples
-Tn <- length(grep("cancer", TIFNIFinfo$NC))
 
 # Color vectors for plotting Tumor subtypes (TS.cols) and normal+cancer (NC.cols)
 TS.cols <- c("purple", "violetred4", "violetred", "orchid2", "orange", "grey60" )
