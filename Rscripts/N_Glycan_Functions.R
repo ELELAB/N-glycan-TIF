@@ -21,7 +21,7 @@
 
 source("https://bioconductor.org/biocLite.R")
 biocLite(c("survcomp", "limma", "sva"))
-list.of.packages <- c("limma", "sva", "openxlsx", "ggplot2", "dendextend", "heatmap.plus", "reshape", "gdata", "plyr", "data.table", "RColorBrewer", "squash", "survcomp", "car", "survminer")
+list.of.packages <- c("limma", "sva", "openxlsx", "ggplot2", "dendextend", "heatmap.plus", "reshape", "gdata", "scales", "plyr", "data.table", "RColorBrewer", "squash", "survcomp", "car", "survminer")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, library, character.only=T)
