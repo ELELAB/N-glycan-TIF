@@ -69,7 +69,7 @@ survivaldata <- survivaldata[as.character(survivaldata$ID) %in% ov,]
 # Calculate outcome in years
 survivaldata$time_to_Outcome_years <- survivaldata$time_to_Outcome_months/12
 
-# Currate N-Glycan data
+# Curate N-Glycan data
 TIF <- TIF[colnames(TIF) %in% ov]
 TIFinfo <- TIFinfo[TIFinfo$ID %in% ov,]
 
