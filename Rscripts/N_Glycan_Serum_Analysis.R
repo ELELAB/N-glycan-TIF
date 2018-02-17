@@ -1,12 +1,3 @@
-
-# Author: Thilde Bagger Terkelsen
-# Contact: thilde@cancer.dk
-# Place of employment: Computational Biology Laboratory, Danish Cancer Society Research Center, Copenhagen, Denmark
-# Date 29-05-2017
-
-
-
-
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
