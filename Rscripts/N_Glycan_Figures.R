@@ -1,10 +1,3 @@
- 
-# Author: Thilde Bagger Terkelsen
-# Contact: thilde@cancer.dk
-# Place of employment: Computational Biology Laboratory, Danish Cancer Society Research Center, Copenhagen, Denmark
-# Date 29-05-2017
-
-
 # NB! The script N_Glycan_Functions.R must be run in order to make sure any dependencies on packages or custom functions is taking into account. 
 # Data for figures are generated from scripts N_Glycan_analysis_paired.R, N_Glycan_Serum_Analysis.R and N_Glycan_Survival_Analysis.R. The code writing out the data is hashtagged out'''
 
