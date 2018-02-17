@@ -63,7 +63,7 @@ survivaldata <- survivaldata[-remove_surv,]
 # Get overlap in sample ID
 ov <- intersect(as.character(survivaldata$ID), as.character(colnames(TIF)))
 
-# Currate survivaldata
+# Curate survivaldata
 survivaldata <- survivaldata[as.character(survivaldata$ID) %in% ov,]
 
 # Calculate outcome in years
