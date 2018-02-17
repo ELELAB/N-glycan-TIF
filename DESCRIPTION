@@ -3,11 +3,13 @@ Type: repository of published data
 Title: Computational analyses of cancer datasets with glycan profiling
 Version: 0.99
 Depends: R (>= 3.3.1)
-Imports: limma, sva, openxlsx, ggplot2, dendextend, heatmap.plus, reshape, gdata, plyr, data.table, RColorBrewer, squash, survminer, car
+Imports: limma, sva, openxlsx, scales, ggplot2, dendextend, heatmap.plus, reshape, gdata, plyr, data.table, RColorBrewer, squash, survminer, car
 Date: 2018-02-12
 Author: Thilde Terkelsen
-Maintainer: Thilde Terkelsen <thilde@cancer.dk>, Elena Papaleo <elena.papaleo.78@gmail.com>
+Maintainer: Thilde Terkelsen <thilde@cancer.dk>, Elena Papaleo <elena.papaleo.78@gmail.com>, Matteo Tiberti <matteo.tiberti@gmail.com>
 Description: The repository was made with intent of openly sharing both data and R-scripts used in analysis in relation to the publication.
 License: GPL (>=3)
-
+NeedsCompilation: no
+URL:https://github.com/ELELAB/N-glycan-TIF
+BugReports: https://github.com/ELELAB/N-glycan-TIF/issues/
 ~                       
