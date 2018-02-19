@@ -26,7 +26,7 @@ TIFNIFinfo <-  openxlsx::read.xlsx("sampleinfo_paired_TIF_NIF_samples.xlsx", col
 # REMOVE OUTLIER SAMPELS, TECHNICAL REPLICATES AND SAMPLES WITH LOW TP (< 40%)
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Samples 118 and 123 are outliers and were removed
+# Remove tumour samples with less than 40% tumour tissue, technical replicates and outlier samples 118 and 123 (see manuscript for specifications).
 remove <- c(TIFNIFinfo[which(TIFNIFinfo$tp %in% c("10", "30", "40")),]$patient_ID, TIFNIFinfo[which(TIFNIFinfo$ID %in% c("TIF118", "NIF118", "TIF123", "NIF123")),]$patient_ID, TIFNIFinfo[grep("Apocrine", TIFNIFinfo$Tumor_subtype_corrected_2015_11_20),]$patient_ID)
 remove <- which(TIFNIFinfo$patient_ID %in% remove)
 
@@ -76,7 +76,7 @@ patient <- as.factor(as.character(TIFNIFinfo$patient))
 batch <- as.factor(TIFNIFinfo$plate)
 
 # Samples batch no Normal
-batch <- as.factor(batch[1:Tn])
+batch_NN <- as.factor(batch[1:Tn])
 
 # Color vectors for plotting Tumor subtypes (TS.cols) and normal+cancer (NC.cols)
 TS.cols <- c("grey60", "navyblue", "blue", "darkolivegreen3", "orange", "red")
