@@ -46,6 +46,7 @@ CRAN:
     survminer
     car
     scales
+    statmod
     
 Bioconductor:
 
