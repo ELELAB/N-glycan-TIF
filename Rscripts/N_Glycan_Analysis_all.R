@@ -27,8 +27,7 @@ TIFNIFinfo <- read.xlsx("TIFNIF_all_info.xlsx", colNames = TRUE, rowNames = TRUE
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-# Samples 118 and 123 are outliers and were removed
-
+# Remove tumour samples with less than 40% tumour tissue, technical replicates and outlier samples 118 and 123 (see manuscript for specifications).
 remove <- c(which(TIFNIFinfo$tp %in% c("10", "30", "40")), which(TIFNIFinfo$ID %in% c("TIF66C", "TIF81a", "TIF81b","TIF109.1", "NIF109.1", "TIF118", "NIF118", "TIF123", "TIF123")), which(TIFNIFinfo$Tumor_subtype_corrected_2015_11_20 == "Apocrine"))
 
 # Remove samples from data and metadata
