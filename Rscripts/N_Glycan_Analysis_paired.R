@@ -226,22 +226,27 @@ glycans_TS_NN <- DA_glycan_apply(contrast.matrix, TIFNIF[,1:Tn], mod_design, 0, 
 # GET EXPRESSION MATRICES FOR DA GLYCANS
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Top 7 differentially expressed N-glycans from DA analysis with Normal vs Cancer
 glycans_NC <- c("GP1","GP2","GP3", "GP4","GP10", "GP15", "A1")
-glycans_TS <- c("GP1","GP2","GP3", "GP4", "GP7", "GP10", "GP11", "GP15", "A1", "GP0")
-glycans_TS_extra <- sort(c(glycans_TS, "G8", "GP9", "GP14", "GP20", "GP23", "coreF"))
-glycans_TS_NN <- c("A1", "GP1", "GP2", "GP3", "GP8", "GP9", "GP14","GP18", "GP20", "GP22")
 
+# Differentially expressed N-glycans from DA analysis with Normal vs Subtypes (and subtypes vs subtype) 
+glycans_TS <- c("GP1","GP2","GP3", "GP4", "GP7", "GP10", "GP11", "GP15", "A1", "GP0")
+
+# Differentially expressed N-glycans from DA analysis with Normal vs Subtypes (and subtypes vs subtype) and from subtype vs subtype but without normal samples. 
+glycans_TS_extra <- sort(c(glycans_TS, "G8", "GP9", "GP14", "GP20", "GP23", "coreF"))
+
+
+# Expression matrix for heatmap representation of DA N-glycans from comparison Normal vs Cancer
+# Batch corrected values
 glycans_batch_NC <- batch_corr_NC[rownames(batch_corr_NC) %in% glycans_NC, ]
+# Raw values
 glycans_raw_NC <- TIFNIF[rownames(TIFNIF) %in% glycans_NC, ]
 
-#glycans_batch_TS <- batch_corr_TS[rownames(batch_corr_TS) %in% glycans_TS, ]
-#glycans_raw_TS <- TIFNIF[rownames(TIFNIF) %in% glycans_TS, ]
-
+# Expression matrix for heatmap representation of DA N-glycans from comparison Normal vs Subtypes (and subtype vs subtype).
+# Batch corrected values
 glycans_batch_TS_extra <- batch_corr_TS[rownames(batch_corr_TS) %in% glycans_TS_extra, ]
+# Raw values
 glycans_raw_TS_extra <- TIFNIF[rownames(TIFNIF) %in%  glycans_TS_extra, ]
-
-#glycans_TS_NN_raw <- TIFNIF[,1:Tn][rownames(TIFNIF[,1:Tn]) %in% glycans_TS_NN,]  
-#glycans_TS_NN_batch <- batch_corr_TS_NN[rownames(batch_corr_TS_NN) %in% glycans_TS_NN,]  
 
 
 
