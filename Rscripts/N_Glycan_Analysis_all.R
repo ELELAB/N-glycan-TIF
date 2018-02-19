@@ -97,8 +97,8 @@ mod_design <-  model.matrix(~NC)
 batch_corr_NC <- ComBat(TIFNIF, batch, mod_design, par.prior=TRUE,prior.plots=FALSE)
 
 # Multidimensional scaling plot before and after batch correction, colored by condition
-myMDSplot(TIFNIF, NC, NC, NC.cols)
-myMDSplot(batch_corr_NC, NC, NC, NC.cols)
+myMDSplot(TIFNIF, NC, "", NC.cols)
+myMDSplot(batch_corr_NC, NC, "", NC.cols)
 
 
 
@@ -113,8 +113,8 @@ mod_design <-  model.matrix(~TS)
 batch_corr_TS <- ComBat(TIFNIF, batch, mod_design, par.prior=TRUE,prior.plots=FALSE)
 
 # Multidimensional scaling plot before and after batch correction, colored by BC subtype
-myMDSplot(TIFNIF, TS, TS, TS.cols)
-myMDSplot(batch_corr_TS, TS, TS, TS.cols)
+myMDSplot(TIFNIF, TS, "", TS.cols)
+myMDSplot(batch_corr_TS, TS, "", TS.cols)
 
 
 
