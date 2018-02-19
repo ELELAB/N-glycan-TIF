@@ -47,10 +47,7 @@ serum <- openxlsx::read.xlsx("serum_glycan_ID.xlsx", colNames = TRUE, rowNames =
 
 
 # Get TIF IDs as numbers
-s <- as.numeric(unlist(strsplit(TIFinfo$ID, "[^[:digit:]]")))
-s <- s[!is.na(s)]
-s <- s[-which(s==1)]
-
+s <- as.vector(sapply(TIFinfo$ID, function(x) sub('[[:alpha:]]+','', x)))
 
 # Add serum samples to TIF metadata
 TIFinfo$s <- s
