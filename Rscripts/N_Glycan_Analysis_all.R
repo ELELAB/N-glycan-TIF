@@ -75,9 +75,13 @@ TS_NN <- as.factor(as.character(TS[1:Tn]))
 # Samples batch
 batch <- as.factor(TIFNIFinfo$plate)
 
+# Samples batch no Normal
+batch <- as.factor(batch[1:Tn])
+
 # Color vectors for plotting Tumor subtypes (TS.cols) and normal+cancer (NC.cols)
-TS.cols <- c("purple", "violetred4", "violetred", "orchid2", "orange", "grey60" )
+TS.cols <- c("orange", "navyblue", "blue", "darkolivegreen3", "red", "grey60")
 NC.cols <- c("red2", "grey50")
+
 
 
 
