@@ -29,11 +29,9 @@ remove <- which(TIFNIFinfo$tp %in% c("10"))
 TIFNIF <- TIFNIF[, -remove]
 TIFNIFinfo <- TIFNIFinfo[-remove,]
 
-
 # Only TIF samples
 TIF <- TIFNIF[,1:length(grep("cancer", TIFNIFinfo$NC))]
 TIFinfo <- TIFNIFinfo[1:length(grep("cancer", TIFNIFinfo$NC)),]
-
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
