@@ -116,8 +116,8 @@ myMDSplot(TIFNIF, TS, "", TS.cols)
 myMDSplot(batch_corr_TS, TS, "", TS.cols)
 
 # Save data for Figure 1
-# Figure1Adata <- list(batch_corr_TS, TS, TS.cols)
-# save(Figure1Adata, file= "Figure1Adata.Rdata")
+Figure1Adata <- list(batch_corr_TS, TS, TS.cols)
+save(Figure1Adata, file= "Figure1Adata.Rdata")
 
 
 
@@ -149,10 +149,10 @@ cotr_N_C <- makeContrasts("NCcancer-NCnormal", levels=mod_design)
 glycans_NC <- DA_glycan(cotr_N_C, TIFNIF, mod_design, 0, 0.05)
 
 # Reform and save data for Figure 1
-#data_ordered <- rbind(glycans_NC[[1]][order(glycans_NC[[1]]$logFC, decreasing=TRUE),], glycans_NC[[2]][order(glycans_NC[[2]]$logFC),])
-#Figure1Bdata <- data.frame(rownames(data_ordered), data_ordered$logFC, 1/data_ordered$adj.P.Val, log2(1/data_ordered$adj.P.Val))
-#colnames(Figure1Bdata) <- c("GPs", "logFC", "inverseFDR", "scaledinverseFDR")
-#save(Figure1Bdata, file="Figure1Bdata.Rdata")  
+data_ordered <- rbind(glycans_NC[[1]][order(glycans_NC[[1]]$logFC, decreasing=TRUE),], glycans_NC[[2]][order(glycans_NC[[2]]$logFC),])
+Figure1Bdata <- data.frame(rownames(data_ordered), data_ordered$logFC, 1/data_ordered$adj.P.Val, log2(1/data_ordered$adj.P.Val))
+colnames(Figure1Bdata) <- c("GPs", "logFC", "inverseFDR", "scaledinverseFDR")
+save(Figure1Bdata, file="Figure1Bdata.Rdata")  
 
 
 
@@ -334,10 +334,10 @@ CD45 <- factor(as.character(TIFinfo$CD45))
 resCD45 <- DA_all_contrasts(TIF, CD45, 0, 0.05, c("CD45three", "CD45two", "CD45one"), remove)
 
 # Reform and save data for Figure 2A
-#data_ordered <- rbind(resCD45$`GCD45three-GCD45one`[[1]][order(resCD45$`GCD45three-GCD45one`[[1]]$logFC, decreasing=TRUE),], resCD45$`GCD45three-GCD45one`[[2]][order(resCD45$`GCD45three-GCD45one`[[2]]$logFC),])
-#Figure2Adata <- data.frame(rownames(data_ordered), data_ordered$logFC, 1/data_ordered$adj.P.Val, log2(1/data_ordered$adj.P.Val))
-#colnames(Figure2Adata) <- c("GPs", "logFC", "inverseFDR", "scaledinverseFDR")
-#save(Figure2Adata, file="Figure2Adata.Rdata")  
+data_ordered <- rbind(resCD45$`GCD45three-GCD45one`[[1]][order(resCD45$`GCD45three-GCD45one`[[1]]$logFC, decreasing=TRUE),], resCD45$`GCD45three-GCD45one`[[2]][order(resCD45$`GCD45three-GCD45one`[[2]]$logFC),])
+Figure2Adata <- data.frame(rownames(data_ordered), data_ordered$logFC, 1/data_ordered$adj.P.Val, log2(1/data_ordered$adj.P.Val))
+colnames(Figure2Adata) <- c("GPs", "logFC", "inverseFDR", "scaledinverseFDR")
+save(Figure2Adata, file="Figure2Adata.Rdata")  
 
 
 
@@ -365,10 +365,10 @@ resCD4 <- DA_all_contrasts(TIF, CD4, 0, 0.05, c("CD4three", "CD4two", "CD4one"),
 
 
 # Reform and save data for Figure 2B
-#data_ordered <- rbind(resCD4$`GCD4three-GCD4one`[[1]][order(resCD4$`GCD4three-GCD4one`[[1]]$logFC, decreasing=TRUE),], resCD4$`GCD4three-GCD4one`[[2]][order(resCD4$`GCD4three-GCD4one`[[2]]$logFC),])
-#Figure2Bdata <- data.frame(rownames(data_ordered), data_ordered$logFC, 1/data_ordered$adj.P.Val, log2(1/data_ordered$adj.P.Val))
-#colnames(Figure2Bdata) <- c("GPs", "logFC", "inverseFDR", "scaledinverseFDR")
-#save(Figure2Bdata, file="Figure2Bdata.Rdata")  
+data_ordered <- rbind(resCD4$`GCD4three-GCD4one`[[1]][order(resCD4$`GCD4three-GCD4one`[[1]]$logFC, decreasing=TRUE),], resCD4$`GCD4three-GCD4one`[[2]][order(resCD4$`GCD4three-GCD4one`[[2]]$logFC),])
+Figure2Bdata <- data.frame(rownames(data_ordered), data_ordered$logFC, 1/data_ordered$adj.P.Val, log2(1/data_ordered$adj.P.Val))
+colnames(Figure2Bdata) <- c("GPs", "logFC", "inverseFDR", "scaledinverseFDR")
+save(Figure2Bdata, file="Figure2Bdata.Rdata")  
 
 
 
