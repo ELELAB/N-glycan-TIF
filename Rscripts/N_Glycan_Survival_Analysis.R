@@ -203,8 +203,8 @@ my_survival(surv_age_TILS_GR_relaps, "Relapsfree_corrected_Age_TILS_Grade")
 surv_age_DFBC <- apply(surv_object[,1:63], 2, function(GP) coxph(Surv(time, DFBC) ~ pspline(age, df=2) + GP, data = surv_object))
 my_survival(surv_age_DFBC, "DFBCsurvival_Age")
 
-#SupplementaryFigure2 <- surv_age_DFBC
-#save(SupplementaryFigure2, file="SupplementaryFigure2.Rdata")
+#SupFig2 <- surv_age_DFBC
+#save(SupFig2, file="SupFig2.Rdata")
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # CAUSE OF DEATH KNOW TO BE BREAST CANCER WITH CONFOUNDERS
