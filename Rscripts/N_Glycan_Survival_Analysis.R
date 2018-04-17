@@ -91,8 +91,8 @@ TIFlog2 <- log2(TIF)
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # creating survival object
 
-surv_object <- data.frame(t(TIFlog2), survivaldata$time_to_Outcome_months, survivaldata$Age_at_surgery, survivaldata$Outcome_status, survivaldata$Relaps_status)
-colnames(surv_object) <- c(rownames(TIFlog2), "time", "age", "outcome", "relaps")
+surv_object <- data.frame(t(TIFlog2), survivaldata$time_to_Outcome_months, survivaldata$Age_at_surgery, survivaldata$Outcome_status, survivaldata$Relaps_status, survivaldata$DFBC)
+colnames(surv_object) <- c(rownames(TIFlog2), "time", "age", "outcome", "relaps", "DFBC")
 
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -170,7 +170,7 @@ my_survival(surv_age_TILS_GR_outcome, "Survival_corrected_Age_TILS_Grade")
 # -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-surv_age_relaps <- apply(TILS_GR_surv_object[,1:63], 2, function(GP) coxph(Surv(time, relaps) ~ pspline(age, df=2) + GP, data = TILS_GR_surv_object))
+surv_age_relaps <- apply(surv_object[,1:63], 2, function(GP) coxph(Surv(time, relaps) ~ pspline(age, df=2) + GP, data = surv_object))
 my_survival(surv_age_relaps, "Relapsfree_survival_Age")
 
 
@@ -182,12 +182,43 @@ my_survival(surv_age_relaps, "Relapsfree_survival_Age")
 
 # TILS as confounder
 surv_age_TILS_relaps <- apply(TILS_GR_surv_object[,1:63], 2, function(GP) coxph(Surv(time, relaps) ~ pspline(age, df=2) + as.factor(TILSinfo_GR$TILS) + GP, data = TILS_GR_surv_object))
-my_survival(surv_age_TILS_relaps, "Survival_corrected_Age_TILS")
+my_survival(surv_age_TILS_relaps, "Relapsfree_corrected_Age_TILS")
 
 # Tumor grade as confounder
 surv_age_GR_relaps<- apply(TILS_GR_surv_object[,1:63], 2, function(GP) coxph(Surv(time, relaps) ~ pspline(age, df=2) + as.factor(TILSinfo_GR$Gr) + GP, data = TILS_GR_surv_object))
-my_survival(surv_age_GR_relaps, "Survival_corrected_Age_Grade")
+my_survival(surv_age_GR_relaps, "Relapsfree_corrected_Age_Grade")
 
 # TILs + Tumor grade as confounders
 surv_age_TILS_GR_relaps <- apply(TILS_GR_surv_object[,1:63], 2, function(GP) coxph(Surv(time, relaps) ~ pspline(age, df=2) + as.factor(TILSinfo_GR$TILS) + as.factor(TILSinfo_GR$Gr) + GP, data = TILS_GR_surv_object))
-my_survival(surv_age_TILS_GR_relaps, "Survival_corrected_Age_TILS_Grade")
+my_survival(surv_age_TILS_GR_relaps, "Relapsfree_corrected_Age_TILS_Grade")
+
+				 
+				 
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# CAUSE OF DEATH KNOW TO BE BREAST CANCER
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+surv_age_DFBC <- apply(surv_object[,1:63], 2, function(GP) coxph(Surv(time, DFBC) ~ pspline(age, df=2) + GP, data = surv_object))
+my_survival(surv_age_DFBC, "DFBCsurvival_Age")
+
+#SupplementaryFigure2 <- surv_age_DFBC
+#save(SupplementaryFigure2, file="SupplementaryFigure2.Rdata")
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# CAUSE OF DEATH KNOW TO BE BREAST CANCER WITH CONFOUNDERS
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# TILS as confounder
+surv_age_TILS_DFBC <- apply(TILS_GR_surv_object[,1:63], 2, function(GP) coxph(Surv(time, DFBC) ~ pspline(age, df=2) + as.factor(TILSinfo_GR$TILS) + GP, data = TILS_GR_surv_object))
+my_survival(surv_age_TILS_DFBC, "DFBCsurvival_corrected_Age_TILS")
+
+# Tumor grade as confounder
+surv_age_GR_DFBC<- apply(TILS_GR_surv_object[,1:63], 2, function(GP) coxph(Surv(time, DFBC) ~ pspline(age, df=2) + as.factor(TILSinfo_GR$Gr) + GP, data = TILS_GR_surv_object))
+my_survival(surv_age_GR_DFBC, "DFBCsurvival_corrected_Age_Grade")
+
+# TILs + Tumor grade as confounders
+surv_age_TILS_GR_DFBC <- apply(TILS_GR_surv_object[,1:63], 2, function(GP) coxph(Surv(time, DFBC) ~ pspline(age, df=2) + as.factor(TILSinfo_GR$TILS) + as.factor(TILSinfo_GR$Gr) + GP, data = TILS_GR_surv_object))
+my_survival(surv_age_TILS_GR_DFBC, "DFBCsurvival_corrected_Age_TILS_Grade")
