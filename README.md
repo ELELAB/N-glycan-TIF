@@ -1,4 +1,4 @@
-Computational Biology Laboratory, Danish Cancer Society Research Center, Strandboulevarden 49, 2100, Copenhagen, Denmark
+Computational Biology Laboratory, Danish Cancer Society Research Center, Strandboulevarden 49, 2100, Copenhagen, Denmark.
 
 Repository associated with the publication:
 
@@ -6,7 +6,7 @@ N-glycan signatures identified in tumor interstitial fluid and serum of breast c
 Thilde Terkelsen, Vilde D Haakensen, Radka Saldova, Pavel Gromov, Merete Kjær Hansen, Henning Stöckmann, Ole Christian Lingjærde, Anne-Lise Børresen-Dale, Elena Papaleo*, Åslaug Helland, Pauline M. Rudd, Irina Gromova, Mol Oncol, 2016, doi: 10.1002/1878-0261.12312
 
 corresponding author: Elena Papaleo, elenap@cancer.dk
-
+r-scripts were created by: Thilde Bagger Terkelsen, thilde@cancer.dk
 
 This repository contains N-glycan abundance data from tumor/normal interstitial fluids and serum obtained from a cohort of patients with breast cancer. The repository was made with intent of openly sharing both data and R-scripts used for analysis in relation to the publication.
 
