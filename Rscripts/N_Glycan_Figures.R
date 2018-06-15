@@ -1,3 +1,8 @@
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Copyright (C) 2018, Thilde Bagger Terkelsen <thilde@cancer.dk> <thildebate@gmail.com>
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # NB! The script N_Glycan_Functions.R must be run in order to make sure any dependencies on packages or custom functions is taking into account. 
 # Data for figures are generated from scripts N_Glycan_analysis_paired.R, N_Glycan_Serum_Analysis.R and N_Glycan_Survival_Analysis.R. The code writing out the data is hashtagged out'''
 
